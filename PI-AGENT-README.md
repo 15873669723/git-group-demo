@@ -26,7 +26,7 @@ pi
 
 截图要求 S1：显示 Pi 已成功启动、版本信息和当前工作目录。只有下载进度不能证明安装完成。出现“No models available”表示客户端已启动，下一步需要配置模型。
 macOS / Linux 可从官方 README 获取对应安装命令。已配置 Node.js 的同学也可使用官方 npm 安装方式，任选一种，无需重复安装。
-![图4](images/img04.png)
+![图4](pi-agent-md/images/img04.png)
 # 任务二 配置模型并完成一次会话
 任选 API Key 或账户登录一种方式。以下以 API Key 为主线，账户登录见下一页。网页聊天账户与 API 调用额度可能分开管理，请先确认账户可用。
 1. 进入模型提供商的官方 API 平台。DeepSeek 示例入口如下。
@@ -35,7 +35,7 @@ macOS / Linux 可从官方 README 获取对应安装命令。已配置 Node.js �
 
 3. 回到 Pi，输入 /login，选择 Sign in with an API key，再搜索并选择提供商。模型名称以当前列表为准，无需照抄示例型号。
 截图不要求展示密钥创建过程；验收重点是配置成功后能收到模型回复。
-![图7](images/img07.png)
+![图7](pi-agent-md/images/img07.png)
 # 任务二 登录操作与会话验收
 
 
@@ -44,7 +44,7 @@ macOS / Linux 可从官方 README 获取对应安装命令。已配置 Node.js �
 另一种方式：在 /login 选择 Sign in with an account，按界面选择可用提供商并完成浏览器授权。可用范围取决于账户和提供商支持，不要求所有同学使用同一种账户。
 
 截图要求 S2：包含自己发出的提示词、模型实际回复和当前模型信息。不要提交 auth.json、授权回调链接或完整密钥。
-![图12](images/img12.png)
+![图12](pi-agent-md/images/img12.png)
 # 任务三 切换模型与模型思考级别
 1. 输入 /model，或按 Ctrl+L 打开模型选择器。记录当前模型，再选择另一个可用模型并确认。列表只出现一个模型时，先配置另一个可用模型或提供商。
 
@@ -53,9 +53,9 @@ macOS / Linux 可从官方 README 获取对应安装命令。已配置 Node.js �
 
 截图要求 S3：显示模型切换前后名称及思考级别切换前后状态，可用两张截图组合证明。说明各选择了什么，以及任务复杂度如何影响选择。
 思考级别是模型推理设置，不是更换模型，也不是显示或隐藏思考文本。部分模型不支持调整；应换用支持该设置的模型完成练习。较高思考级别不保证每次答案更好，可能增加等待时间和用量。
-![图15](images/img15.png)
-![图16](images/img16.png)
-![图17](images/img17.png)
+![图15](pi-agent-md/images/img15.png)
+![图16](pi-agent-md/images/img16.png)
+![图17](pi-agent-md/images/img17.png)
 # 任务四 引用代码并粘贴小图片
 ## A 使用 @ 引用代码文件
 在 pi-test 文件夹创建 hello.py，保存以下内容：
@@ -70,14 +70,14 @@ print(add(2, 3))
 “请解释 @hello.py 的功能，说明运行后输出什么。只解释，不修改文件。”
 检查回复是否解释了 add 函数并给出输出 5。@ 用于选择并引用文件；只打出 @ 而未选中文件，不算完成引用。
 截图要求 S4：显示引用的文件名、问题和实际回复；若回复区域太长，可用两张截图。
-![图18](images/img18.png)
+![图18](pi-agent-md/images/img18.png)
 ## B 粘贴小图片并测试
 准备一张约 200×200 像素的小图片，例如用画图画一个蓝色方块，旁边写数字 7。先截取图片内容到剪贴板，不要只复制图片文件的路径。
 切换到明确支持图片输入的模型。在 Pi 输入区按 Windows 的 Alt+V 粘贴；当前版本也可能支持 Ctrl+V。macOS 通常使用 Ctrl+V，以 /hotkeys 为准。确认出现图片附件或图片输入提示，再发送：
 “请描述图片中的颜色、形状和数字。”
 截图要求 S5：显示已附加图片的提示、问题和实际回复；报告同时插入原始小图片，便于核对识别结果。无需测试大图或批量图片。
-![图19](images/img19.png)
-![图20](images/img20.png)
+![图19](pi-agent-md/images/img19.png)
+![图20](pi-agent-md/images/img20.png)
 如果 Alt+V 无反应：确认剪贴板里是图像，检查终端快捷键冲突，使用 /hotkeys 核对绑定；兼容终端也可尝试拖入图片作为排查，但本任务仍需记录图片粘贴操作。
 # 任务五 安装并使用一个插件
 插件（Extension）能增加工具、命令、界面或事件处理；Skill 则提供特定任务的操作说明及支持文件。Pi Package 可以包含两者，也可以包含主题和提示模板。安装包不代表其中所有资源都已加载。
@@ -97,9 +97,9 @@ pi install npm:pi-web-access -l --approve
 4. 根据所选插件说明试用一个最小功能。例如 pi-web-access 可尝试“请获取 https://example.com 的页面标题”，观察对应工具调用及结果；若提示需要配置，按该插件 README 处理。加载成功与联网功能可用应分别记录。
 截图要求 S6：安装成功输出、重新运行 pi 后的加载信息，以及一次插件功能调用结果。任选插件，报告说明实际选用的功能。
 常见问题：pi install 依赖 npm；若提示找不到 npm，安装或修复 Node.js/npm，并重新打开终端。Pi 已能运行，不代表当前 PowerShell 的 npm 命令也可用。
-![图22](images/img22.png)
-![图23](images/img23.png)
-![图24](images/img24.png)
+![图22](pi-agent-md/images/img22.png)
+![图23](pi-agent-md/images/img23.png)
+![图24](pi-agent-md/images/img24.png)
 # 任务六 让 AI 安装一个 PPT Skill（选做项）
 示例采用 anthropics/skills 仓库的 skills/pptx，包含 PPT 创建、读取、编辑及检查说明。本机已由 Pi 读取并执行下载脚本，下载到 D:\projects\study\.pi\skills\pptx，(同学的下载路径可自行选择，此处为教师演示)，共 56 个文件。源 commit：2c5958ecac7cee2b583967a2c4981d0f4a75c579。
 1. 在 D:\projects\study 打开终端并启动 pi。向 AI 发送以下提示词：
